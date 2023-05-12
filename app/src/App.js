@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import About from './components/about/about';
+import Projects from './components/projects';
+import Contact from './components/contact';
+
 import './App.css';
 
-function App() {
+const App = () => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleNavItemClick = (sectionId) => {
+    scrollToSection(sectionId);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header>
+        <h1>Christian Rodriguez</h1>
+        <nav>
+          <ul>
+            <li>
+              <button onClick={() => handleNavItemClick('about')}>About</button>
+            </li>
+            <li>
+              <button onClick={() => handleNavItemClick('projects')}>Projects</button>
+            </li>
+            <li>
+              <button onClick={() => handleNavItemClick('contact')}>Contact</button>
+            </li>
+          </ul>
+        </nav>
       </header>
+      <main>
+        <About />
+        <Projects />
+        <Contact />
+      </main>
     </div>
   );
-}
+};
 
 export default App;

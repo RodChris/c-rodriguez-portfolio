@@ -1,38 +1,131 @@
-.App {
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
   text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #112112; /* Darker shade of green for the header */
+  z-index: 100; /* Ensure the header stays on top of other elements */
+  padding: 10px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header.shrink {
+  height: 60px; /* Set the height of the header when shrunk */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #224f30; /* Dark green background color */
+  color: #fff; /* White text color */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #112112; /* Darker shade of green for the navigation bar */
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+main {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px 20px;
+  overflow: hidden; /* Hide content overflow on smaller screens */
 }
 
-.App-link {
-  color: #61dafb;
+section {
+  width: 80%; /* Set a fixed width of 80% */
+  margin-bottom: 40px;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 1100px; /* Add a max-width to prevent it from becoming too wide */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+section#about {
+  background-color: #1c4230; /* Dark green background for the about section */
+}
+
+section#projects {
+  background-color: #1f3344; /* Dark blue background for the projects section */
+}
+
+section#contact {
+  background-color: #3c3c3c; /* Dark gray background for the contact section */
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #112112; /* Darker shade of green for form inputs */
+  color: #fff;
+  border: none;
+}
+
+form button {
+  background-color: #112112; /* Darker shade of green for the button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #1f3d28; /* Slightly lighter shade of green on hover */
 }
